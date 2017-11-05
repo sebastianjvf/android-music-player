@@ -40,7 +40,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/playPauseImageView"
+            android:id="@+id/play_pause_image_view"
             style="@style/play_pause_image_view" />
 
     </LinearLayout>

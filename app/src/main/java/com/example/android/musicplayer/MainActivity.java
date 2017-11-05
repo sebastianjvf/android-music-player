@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         currentSong.hide();
 
         // Add onClickListener to the playPauseImageView
-        ((ImageView) findViewById(R.id.playPauseImageView)).setOnClickListener(new View.OnClickListener() {
+        ((ImageView) findViewById(R.id.play_pause_image_view)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(currentSong.isPlaying()) {

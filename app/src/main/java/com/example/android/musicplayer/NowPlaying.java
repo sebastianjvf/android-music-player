@@ -32,7 +32,7 @@ public class NowPlaying {
      */
     public void play() {
         isPlaying = true;
-        ((ImageView) linearLayout.findViewById(R.id.playPauseImageView)).setImageResource(R.drawable.ic_play_circle_filled_24dp);
+        ((ImageView) linearLayout.findViewById(R.id.play_pause_image_view)).setImageResource(R.drawable.ic_pause_circle_filled_24dp);
     }
 
     /**
@@ -40,7 +40,7 @@ public class NowPlaying {
      */
     public void pause() {
         isPlaying = false;
-        ((ImageView) linearLayout.findViewById(R.id.playPauseImageView)).setImageResource(R.drawable.ic_pause_circle_filled_24dp);
+        ((ImageView) linearLayout.findViewById(R.id.play_pause_image_view)).setImageResource(R.drawable.ic_play_circle_filled_24dp);
     }
 
     /**
