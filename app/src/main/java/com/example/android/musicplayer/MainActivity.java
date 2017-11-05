@@ -2,11 +2,14 @@ package com.example.android.musicplayer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static NowPlaying currentSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +32,7 @@ public class MainActivity extends AppCompatActivity {
         SongAdapter songAdapter = new SongAdapter(this, songList);
         ListView listView = (ListView) findViewById(R.id.song_list);
         listView.setAdapter(songAdapter);
+
+        currentSong = new NowPlaying((LinearLayout) findViewById(R.id.now_playing), false, null);
     }
 }

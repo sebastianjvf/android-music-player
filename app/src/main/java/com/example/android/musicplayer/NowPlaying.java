@@ -5,13 +5,13 @@ import android.widget.LinearLayout;
 public class NowPlaying {
 
     LinearLayout linearLayout;
-    String isPlaying;
-    Song currentSong;
+    boolean isPlaying;
+    Song song;
 
-    public NowPlaying(LinearLayout linearLayout, String isPlaying, Song currentSong) {
+    public NowPlaying(LinearLayout linearLayout, boolean isPlaying, Song song) {
         this.linearLayout = linearLayout;
         this.isPlaying = isPlaying;
-        this.currentSong = currentSong;
+        this.song = song;
     }
 
 }
