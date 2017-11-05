@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.song_list);
         listView.setAdapter(songAdapter);
 
+        // Instantiate the currentSong
         currentSong = new NowPlaying((LinearLayout) findViewById(R.id.now_playing), false, null);
     }
 }
