@@ -37,14 +37,16 @@ public class SongAdapter extends ArrayAdapter<Song> {
         TextView songArtist = listItemView.findViewById(R.id.song_artist);
         songArtist.setText(song.getArtist());
 
+        // Add onClickListener to the whole item
         listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Set the current song to the new one
                 MainActivity.currentSong.setSong(song);
 
-                // Show the current song in case it isn't shown
+                // Show the current song in case it isn't shown and play it
                 MainActivity.currentSong.show();
+                MainActivity.currentSong.play();
             }
         });
 

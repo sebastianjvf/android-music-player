@@ -2,6 +2,8 @@ package com.example.android.musicplayer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -36,5 +38,17 @@ public class MainActivity extends AppCompatActivity {
         // Instantiate the currentSong and hide it
         currentSong = new NowPlaying((LinearLayout) findViewById(R.id.now_playing), false, null);
         currentSong.hide();
+
+        // Add onClickListener to the playPauseImageView
+        ((ImageView) findViewById(R.id.playPauseImageView)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(currentSong.isPlaying()) {
+                    currentSong.pause();
+                } else {
+                    currentSong.play();
+                }
+            }
+        });
     }
 }
