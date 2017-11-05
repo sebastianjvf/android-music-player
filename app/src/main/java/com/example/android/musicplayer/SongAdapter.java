@@ -37,6 +37,13 @@ public class SongAdapter extends ArrayAdapter<Song> {
         TextView songArtist = listItemView.findViewById(R.id.song_artist);
         songArtist.setText(song.getArtist());
 
+        listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         return listItemView;
     }
 }

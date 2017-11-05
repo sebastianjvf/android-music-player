@@ -1,5 +1,7 @@
 package com.example.android.musicplayer;
 
+import android.content.Context;
+import android.view.View;
 import android.widget.LinearLayout;
 
 public class NowPlaying {
@@ -14,22 +16,54 @@ public class NowPlaying {
         this.song = song;
     }
 
-    public LinearLayout getLinearLayout() {
-        return linearLayout;
+    /**
+     * Returns the current context of the current song box.
+     * @return
+     */
+    public Context getContext() {
+        return linearLayout.getContext();
     }
 
-    public boolean isPlaying() {
-        return isPlaying;
+    /**
+     * Plays the current song.
+     */
+    public void play() {
+        isPlaying = true;
     }
 
-    public void setPlaying(boolean playing) {
-        isPlaying = playing;
+    /**
+     * Pauses the current song.
+     */
+    public void pause() {
+        isPlaying = false;
     }
 
+    /**
+     * Hides the current song box.
+     */
+    public void hide() {
+        linearLayout.setVisibility(View.GONE);
+    }
+
+    /**
+     * Hides the current song box.
+     */
+    public void show() {
+        linearLayout.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * Retrieves the current song.
+     * @return
+     */
     public Song getSong() {
         return song;
     }
 
+    /**
+     * Sets the current song.
+     * @return
+     */
     public void setSong(Song song) {
         this.song = song;
     }
