@@ -2,6 +2,7 @@ package com.example.android.musicplayer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -23,5 +24,10 @@ public class MainActivity extends AppCompatActivity {
         songList.add(new Song("Title #8", "Artist"));
         songList.add(new Song("Title #9", "Artist"));
         songList.add(new Song("Title #10", "Artist"));
+
+        // Attach adapter
+        SongAdapter songAdapter = new SongAdapter(this, songList);
+        ListView listView = (ListView) findViewById(R.id.song_list);
+        listView.setAdapter(songAdapter);
     }
 }
