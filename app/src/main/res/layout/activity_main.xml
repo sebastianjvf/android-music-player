@@ -41,10 +41,7 @@
 
         <ImageView
             android:id="@+id/playPauseImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:padding="@dimen/object_padding"
-            android:src="@drawable/ic_play_circle_filled_24dp" />
+            style="@style/play_pause_image_view" />
 
     </LinearLayout>
 
