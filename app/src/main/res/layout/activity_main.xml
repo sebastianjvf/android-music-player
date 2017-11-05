@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/song_list"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.android.musicplayer.MainActivity">
 
-</ListView>
+    <ListView
+        android:id="@+id/song_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/now_playing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <LinearLayout
+            style="@style/song_list_item"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/song_title"
+                style="@style/song_title"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/song_artist"
+                style="@style/song_artist"
+                tools:text="Artist" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/playPauseImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/object_padding"
+            android:src="@drawable/ic_play_circle_filled_24dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
