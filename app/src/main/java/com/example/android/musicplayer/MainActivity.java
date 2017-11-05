@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static NowPlaying currentSong;
+    public static NowPlaying nowPlaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(songAdapter);
 
         // Instantiate the currentSong and hide it
-        currentSong = new NowPlaying((LinearLayout) findViewById(R.id.now_playing), false, null);
-        currentSong.hide();
+        nowPlaying = new NowPlaying((LinearLayout) findViewById(R.id.now_playing), false, null);
+        nowPlaying.hide();
 
         // Add onClickListener to the now_playing box
         ((LinearLayout) findViewById(R.id.now_playing)).setOnClickListener(new View.OnClickListener() {
@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         ((ImageView) findViewById(R.id.play_pause_image_view)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(currentSong.isPlaying()) {
-                    currentSong.pause();
+                if(nowPlaying.isPlaying()) {
+                    nowPlaying.pause();
                 } else {
-                    currentSong.play();
+                    nowPlaying.play();
                 }
             }
         });

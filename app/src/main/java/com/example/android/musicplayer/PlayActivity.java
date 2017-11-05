@@ -16,12 +16,12 @@ public class PlayActivity extends AppCompatActivity {
         TextView titleTextView = (TextView) findViewById(R.id.play_activity_song_title);
         TextView artistTextView = (TextView) findViewById(R.id.play_activity_song_artist);
 
-        titleTextView.setText(MainActivity.currentSong.getSong().getTitle());
-        artistTextView.setText(MainActivity.currentSong.getSong().getArtist());
+        titleTextView.setText(MainActivity.nowPlaying.getSong().getTitle());
+        artistTextView.setText(MainActivity.nowPlaying.getSong().getArtist());
 
         final ImageView playPauseImageView = (ImageView) findViewById(R.id.play_pause_image_view);
 
-        if (MainActivity.currentSong.isPlaying()) {
+        if (MainActivity.nowPlaying.isPlaying()) {
             playPauseImageView.setImageResource(R.drawable.ic_pause_circle_filled_24dp);
         } else {
             playPauseImageView.setImageResource(R.drawable.ic_play_circle_filled_24dp);
@@ -30,11 +30,11 @@ public class PlayActivity extends AppCompatActivity {
         playPauseImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MainActivity.currentSong.isPlaying()) {
-                    MainActivity.currentSong.pause();
+                if(MainActivity.nowPlaying.isPlaying()) {
+                    MainActivity.nowPlaying.pause();
                     playPauseImageView.setImageResource(R.drawable.ic_play_circle_filled_24dp);
                 } else {
-                    MainActivity.currentSong.play();
+                    MainActivity.nowPlaying.play();
                     playPauseImageView.setImageResource(R.drawable.ic_pause_circle_filled_24dp);
                 }
             }

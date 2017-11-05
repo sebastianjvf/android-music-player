@@ -43,11 +43,11 @@ public class SongAdapter extends ArrayAdapter<Song> {
             @Override
             public void onClick(View view) {
                 // Set the current song to the new one
-                MainActivity.currentSong.setSong(song);
+                MainActivity.nowPlaying.setSong(song);
 
                 // Show the current song in case it isn't shown and play it
-                MainActivity.currentSong.show();
-                MainActivity.currentSong.play();
+                MainActivity.nowPlaying.show();
+                MainActivity.nowPlaying.play();
 
                 // Send an intent to play_activity
                 Intent intent = new Intent(getContext(), PlayActivity.class);
