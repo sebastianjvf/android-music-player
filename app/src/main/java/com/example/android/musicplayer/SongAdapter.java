@@ -1,6 +1,7 @@
 package com.example.android.musicplayer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -47,6 +48,10 @@ public class SongAdapter extends ArrayAdapter<Song> {
                 // Show the current song in case it isn't shown and play it
                 MainActivity.currentSong.show();
                 MainActivity.currentSong.play();
+
+                // Send an intent to play_activity
+                Intent intent = new Intent(getContext(), PlayActivity.class);
+                getContext().startActivity(intent);
             }
         });
 
