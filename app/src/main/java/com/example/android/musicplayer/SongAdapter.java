@@ -40,7 +40,11 @@ public class SongAdapter extends ArrayAdapter<Song> {
         listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Set the current song to the new one
+                MainActivity.currentSong.setSong(song);
 
+                // Show the current song in case it isn't shown
+                MainActivity.currentSong.show();
             }
         });
 

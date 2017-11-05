@@ -3,6 +3,7 @@ package com.example.android.musicplayer;
 import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class NowPlaying {
 
@@ -18,6 +19,7 @@ public class NowPlaying {
 
     /**
      * Returns the current context of the current song box.
+     *
      * @return
      */
     public Context getContext() {
@@ -54,6 +56,7 @@ public class NowPlaying {
 
     /**
      * Retrieves the current song.
+     *
      * @return
      */
     public Song getSong() {
@@ -61,10 +64,16 @@ public class NowPlaying {
     }
 
     /**
-     * Sets the current song.
+     * Sets and updates the TextViews in the current song.
+     *
      * @return
      */
     public void setSong(Song song) {
+        // Update the current song
         this.song = song;
+
+        // Set the TextViews to show the current song
+        ((TextView) linearLayout.findViewById(R.id.song_title)).setText(this.song.getTitle());
+        ((TextView) linearLayout.findViewById(R.id.song_artist)).setText(this.song.getArtist());
     }
 }

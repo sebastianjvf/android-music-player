@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static NowPlaying currentSong;
+    public static NowPlaying currentSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
